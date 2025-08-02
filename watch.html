@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWRTV - مشاهدة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">جاري التحميل...</h1>
+    </header>
+
+    <main style="padding: 20px;">
+        <div id="player" style="text-align:center; margin-bottom:20px;"></div>
+        <div id="episodes"></div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        fetch("data/awrtv_content.json")
+            .then(response => response.json())
+            .then(data => {
+                const item = data[id];
+                document.getElementById("title").innerText = item.title;
+
+                const player = document.getElementById("player");
+                const episodesDiv = document.getElementById("episodes");
+
+                if(item.episodes && item.episodes.length > 0){
+                    // عرض الحلقة الأولى تلقائيًا
+                    let currentEp = item.episodes[0];
+                    player.innerHTML = `<iframe src="${currentEp.stream_url}" width="100%" height="400" allowfullscreen></iframe>`;
+
+                    // قائمة الحلقات
+                    item.episodes.forEach((ep, idx) => {
+                        const btn = document.createElement("button");
+                        btn.innerText = ep.name;
+                        btn.style.margin = "5px";
+                        btn.onclick = () => {
+                            player.innerHTML = `<iframe src="${ep.stream_url}" width="100%" height="400" allowfullscreen></iframe>`;
+                        };
+
+                        // زر تحميل
+                        const download = document.createElement("a");
+                        download.innerText = " ⬇️ تحميل ";
+                        download.href = ep.download_url;
+                        download.target = "_blank";
+                        download.style.margin = "5px";
+
+                        const div = document.createElement("div");
+                        div.appendChild(btn);
+                        div.appendChild(download);
+                        episodesDiv.appendChild(div);
+                    });
+                } else {
+                    player.innerHTML = "<p>لا توجد حلقات متاحة حالياً</p>";
+                }
+            });
+    </script>
+</body>
+</html>
