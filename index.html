@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWRTV V.5</title>
+    <title>AWRTV - دراما كورية وأنمي</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
     <header>
-        <h1>AWRTV V.5</h1>
-        <p>مكتبة الأفلام والمسلسلات والأنمي</p>
+        <h1>🎬 AWRTV</h1>
+        <p>مشاهدة دراما كورية وأنمي مع تحميل مباشر</p>
     </header>
-
-    <main>
-        <div id="content" class="grid"></div>
+    
+    <main id="content">
+        <!-- سيتم ملء المحتوى ديناميكيًا من content.json -->
     </main>
 
-    <footer>
-        <p>© 2025 AWRTV</p>
-    </footer>
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <video id="videoPlayer" controls></video>
+            <a id="downloadBtn" href="#" download>⬇ تحميل مباشر</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
