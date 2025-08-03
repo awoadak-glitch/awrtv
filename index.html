@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF‑8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWR‑WRT – جهاز الراوتر JCG Q20</title>
+    <!-- Bootstrap RTL version for proper right‑to‑left layout -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold glow" href="#">AWR‑WRT</a>
+        <button
+          class="btn btn-outline-danger position-relative"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#favoritesCanvas"
+          aria-controls="favoritesCanvas"
+        >
+          <i class="fa-solid fa-heart"></i> المفضلة
+          <span
+            id="favCount"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >0</span
+          >
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero section with decorative background -->
+    <header class="hero-section d-flex align-items-center">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+            <h1 class="display-4 fw-bold text-white mb-3">
+              JCG Q20 – راوتر لاسلكي بتقنية WiFi6
+            </h1>
+            <p class="lead text-white-50 mb-4">
+              تتيح لك تقنية WiFi6 سرعة اتصال استثنائية وثباتًا عاليًا، مع تصميم
+              أنيق يلائم أي مساحة. استمتع بالأداء القوي والخصائص المتقدمة
+              لتوصيل أجهزتك بسلاسة.
+            </p>
+            <button class="btn btn-danger btn-lg px-4" onclick="toggleFavorite('JCG Q20')">
+              <i class="fa-solid fa-heart me-2"></i> أضف إلى المفضلة
+            </button>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="images/jcg-q20-main.jpg"
+              class="img-fluid rounded shadow"
+              alt="JCG Q20 router"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Carousel section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4 fw-bold text-center">معرض الصور</h2>
+        <div id="deviceCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#deviceCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="الشريحة الأولى"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#deviceCarousel"
+              data-bs-slide-to="1"
+              aria-label="الشريحة الثانية"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#deviceCarousel"
+              data-bs-slide-to="2"
+              aria-label="الشريحة الثالثة"
+            ></button>
+          </div>
+          <div class="carousel-inner rounded overflow-hidden shadow-lg">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img
+                src="images/jcg-q20-main.jpg"
+                class="d-block w-100"
+                alt="صورة الجهاز الرئيسية"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <!-- Decorative abstract background slide -->
+              <img
+                src="images/abstract-network.jpg"
+                class="d-block w-100"
+                alt="خلفية شبكة رقمية"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <!-- Another slide showcasing the device in context -->
+              <img
+                src="images/jcg-q20-main.jpg"
+                class="d-block w-100"
+                alt="راوتر JCG Q20"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#deviceCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">السابق</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#deviceCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">التالي</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specifications section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="mb-4 fw-bold text-center text-dark">المواصفات الرئيسية</h2>
+        <div class="row g-4">
+          <!-- Each spec uses an icon and description -->
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-microchip fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">المعالج</h5>
+                <p class="mb-0 small">MediaTek MT7621A ثنائي النواة بسرعة 880MHz</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-memory fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">الذاكرة</h5>
+                <p class="mb-0 small">128MB DDR3 + 16MB NOR Flash</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-wifi fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">شبكة WiFi</h5>
+                <p class="mb-0 small">تردد ثنائي 2.4GHz 300Mbps + 5GHz 867Mbps (AC1200)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-signal fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">الهوائيات</h5>
+                <p class="mb-0 small">4 هوائيات خارجية عالية الكسب 5dBi</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-network-wired fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">المنافذ</h5>
+                <p class="mb-0 small">1 × WAN 1Gbps و 3 × LAN 1Gbps</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-cog fa-2x text-danger ms-3"></i>
+              <div>
+                <h5 class="fw-bold mb-1">الدعم والبرمجيات</h5>
+                <p class="mb-0 small">يدعم OpenWrt / AWR_WRT، تحكم عن بُعد، IPv4 و DHCP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offcanvas favorites panel -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="favoritesCanvas"
+      aria-labelledby="favoritesCanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="favoritesCanvasLabel">الأجهزة المفضلة</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="إغلاق"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul id="favoritesList" class="list-group list-group-flush"></ul>
+        <div id="noFavorites" class="text-center text-muted mt-3">
+          لا توجد أجهزة في المفضلة حاليا
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3 mt-5">
+      © <span id="year"></span> AWR‑WRT. جميع الحقوق محفوظة.
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom script -->
+    <script src="script.js"></script>
+  </body>
+</html>
