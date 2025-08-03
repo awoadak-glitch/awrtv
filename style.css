@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  font-family: 'Tajawal', sans-serif;
+}
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 5px #ff4d6d, 0 0 10px #ff4d6d; }
+  to { text-shadow: 0 0 20px #ff4d6d, 0 0 30px #ff4d6d; }
+}
+.device-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.device-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.swiper {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.swiper-slide img {
+  width: 100%;
+  display: block;
+}
