@@ -1,35 +1,71 @@
+/* Import Google Font Tajawal for modern Arabic typography */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
+
 body {
-  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
   font-family: 'Tajawal', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding-top: 72px; /* ensure content doesn’t hide behind fixed navbar */
+  color: #212529;
 }
-@keyframes gradient {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
+
+/* Text glow for brand name */
 .glow {
   animation: glow 2s ease-in-out infinite alternate;
 }
+
 @keyframes glow {
-  from { text-shadow: 0 0 5px #ff4d6d, 0 0 10px #ff4d6d; }
-  to { text-shadow: 0 0 20px #ff4d6d, 0 0 30px #ff4d6d; }
+  from {
+    text-shadow: 0 0 5px #ff6b81, 0 0 10px #ff6b81;
+  }
+  to {
+    text-shadow: 0 0 15px #ff4757, 0 0 30px #ff4757;
+  }
 }
-.device-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+
+/* Hero section styles */
+.hero-section {
+  min-height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('images/abstract-network.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
-.device-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+
+.hero-section h1 {
+  line-height: 1.3;
 }
-.swiper {
-  width: 90%;
-  max-width: 600px;
-  border-radius: 15px;
-  overflow: hidden;
+
+.hero-section p {
+  max-width: 500px;
 }
-.swiper-slide img {
-  width: 100%;
-  display: block;
+
+/* Carousel adjustments */
+.carousel-item img {
+  object-fit: cover;
+  height: 400px;
+}
+
+@media (min-width: 992px) {
+  .carousel-item img {
+    height: 500px;
+  }
+}
+
+/* Offcanvas favorites styling */
+#favoritesList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+#favoritesList li .remove-btn {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+/* Footer styling */
+footer {
+  font-size: 0.875rem;
 }
